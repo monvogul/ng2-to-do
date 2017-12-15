@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+
+body {
+  margin: 0;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+.completed .mat-list-text{
+  text-decoration-line: line-through;
+  color:silver;
+}
