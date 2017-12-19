@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import {TodoHeaderComponent} from "./header/todo-header/todo-header.component";
 import {NotesService} from "./notes-list/notes.service";
 import {FormsModule} from "@angular/forms";
+import {AuthComponent} from "./auth/auth.component";
+import {AuthService} from "./auth/auth.service";
+import {AngularFireAuthModule} from "angularfire2/auth";
+
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyB3I5iDYBBU-rjye8GDPBp48joBSyLYxB8',
@@ -20,7 +24,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
     TodoHeaderComponent
+
   ],
   imports: [
     BrowserModule,
@@ -28,10 +34,10 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
-    MaterialComponentModule
-
+    MaterialComponentModule,
+    AngularFireAuthModule
   ],
-  providers: [NotesService],
+  providers: [NotesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
