@@ -1,0 +1,10 @@
+<button  mat-fab color="accent" (click)="githubSignout()" *ngIf="authService.user$ | async  as user; else notLoggedIn">
+ <span matTooltip="Click to signout" *ngIf="user" (click)="signOut()"> {{ user.displayName }} </span>
+</button>
+
+<ng-template #notLoggedIn>
+  <button  mat-raised-button  color="accent" (click)="githubLogin()" *ngIf="!user">
+    Sign In
+  </button>
+</ng-template>
+
