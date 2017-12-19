@@ -14,12 +14,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyB3I5iDYBBU-rjye8GDPBp48joBSyLYxB8',
-  authDomain: 'ng-to-do-afb25.firebaseapp.com',
-  databaseURL: 'https://ng-to-do-afb25.firebaseio.com',
-  projectId: 'ng-to-do-afb25',
-  storageBucket: '',
-  messagingSenderId: '367214937827'
+  
 }
 @NgModule({
   declarations: [
