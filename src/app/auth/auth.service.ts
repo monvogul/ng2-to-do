@@ -15,10 +15,10 @@ export class AuthService {
   }
 
   loginWithGoogle() {
-     this.afAuth.auth.signInWithRedirect(new GoogleAuthProvider());
+     this.afAuth.auth.signInWithPopup(new GoogleAuthProvider());
   }
   loginWithGitHub() {
-    this.afAuth.auth.signInWithRedirect(new GithubAuthProvider());
+    this.afAuth.auth.signInWithPopup(new GithubAuthProvider());
   }
 
   logOut() {

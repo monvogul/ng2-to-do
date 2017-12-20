@@ -1,10 +1,20 @@
-<button  mat-fab color="accent" (click)="githubSignout()" *ngIf="authService.user$ | async  as user; else notLoggedIn">
- <span matTooltip="Click to signout" *ngIf="user" (click)="signOut()"> {{ user.displayName }} </span>
-</button>
+<section  *ngIf="authService.user$ | async  as user; else notLoggedIn">
+  <span> {{ user.displayName }} </span>
+  <button  mat-mini-fab class="mat-elevation-z24" (click)="signOut()">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</section>
+
+
 
 <ng-template #notLoggedIn>
-  <button  mat-raised-button  color="accent" (click)="githubLogin()" *ngIf="!user">
-    Sign In
+  <span (click)="showLoginOptions=!showLoginOptions" style="margin-right:.5em;color:white;font-size: 16px; cursor: pointer; font-weight:500;font-family: 'Roboto', sans-serif">Login</span>
+  <button  [@visibilityAnimation]="showLoginOptions" mat-mini-fab (click)="githubLogin()" *ngIf="!user" matTooltip="Login with github">
+    <i class="fa fa-github fa-2x"></i>
+  </button>
+
+  <button [@visibilityAnimation]="showLoginOptions" mat-mini-fab  (click)="googleLogin()" *ngIf="!user" matTooltip="Login with google">
+    <i class="fa fa-google fa-2x"></i>
   </button>
 </ng-template>
 
