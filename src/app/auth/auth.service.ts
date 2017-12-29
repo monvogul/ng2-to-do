@@ -8,20 +8,39 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class AuthService {
 
-  user$: Observable<firebase.User> ;
-
+  user:any
   constructor(public afAuth: AngularFireAuth) {
-    this.user$ = this.afAuth.authState ;
+      this.afAuth.authState.subscribe((user) => {
+      this.user = user ;
+    });
+  }
+
+  // Returns true if user is logged in
+  get authenticated(): boolean {
+    return this.afAuth.authState !== null;
+  }
+
+  // Returns current user UID
+  get currentUserId(): string {
+    return this.authenticated ? this.user.uid : '';
   }
 
   loginWithGoogle() {
-     this.afAuth.auth.signInWithPopup(new GoogleAuthProvider());
+    const provider = new firebase.auth.GoogleAuthProvider()
+    return this.socialSignIn(provider);
   }
+
   loginWithGitHub() {
-    this.afAuth.auth.signInWithPopup(new GithubAuthProvider());
+    const provider = new firebase.auth.GithubAuthProvider()
+    return this.socialSignIn(provider);
   }
 
   logOut() {
-    this.afAuth.auth.signOut() ;
+    return this.afAuth.auth.signOut() ;
   }
+
+  private socialSignIn(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+  }
+
 }

@@ -1,48 +1,4 @@
 <app-todo-header></app-todo-header>
 
+<router-outlet></router-outlet>
 
-<div class="noteContainer">
-<mat-form-field>
-  <input type="text" placeholder="What do you want to do?" (keyup.enter)="addNewNote()" [(ngModel)]="newNote" matInput/>
-  <button mat-button *ngIf="newNote" matSuffix mat-icon-button (click)="newNote=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-</div>
-
-
-
-<div class="listContainer">
-        <mat-card>
-            <mat-card-content>
-             <mat-selection-list  [@listAnimation]="items | async">
-                 <div class="notesContainer" *ngFor="let note of items | async">
-                   <mat-icon  *ngIf="!note.completed" mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
-                   <mat-list-option *ngIf="!note.completed"  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
-                         {{ note.title }}
-                     <mat-divider></mat-divider>
-
-                   </mat-list-option>
-                 </div>
-             </mat-selection-list>
-
-
-              <mat-selection-list  [@listAnimation]="items | async">
-                <div class="notesContainer" *ngFor="let note of items | async ">
-                  <mat-icon *ngIf="note.completed" mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
-                  <mat-list-option *ngIf="note.completed"  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
-                    {{ note.title }}
-                    <mat-divider></mat-divider>
-                  </mat-list-option>
-
-                </div>
-              </mat-selection-list>
-
-        </mat-card-content>
-          <mat-card-footer *ngIf="remaingingTodos">
-             Tasks Remaining: {{  remaingingTodos.length }}
-          </mat-card-footer>
-        </mat-card>
-    <br/>
-
-</div>

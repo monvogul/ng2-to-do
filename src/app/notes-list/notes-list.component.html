@@ -1,3 +1,55 @@
-<p>
-  notes-list works!
-</p>
+<div class="noteContainer">
+  <mat-form-field>
+    <input type="text" placeholder="What do you want to do?" (keyup.enter)="addNewNote()" [(ngModel)]="newNote" matInput/>
+    <button mat-button *ngIf="newNote" matSuffix mat-icon-button (click)="newNote=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+
+<div *ngIf="(items | async)?.length>0" class="listContainer" [@listAnimation]="items | async" >
+    <mat-card>
+    <mat-card-content>
+      <mat-selection-list>
+        <div class="notesContainer" *ngFor="let note of items | async">
+          <mat-icon  *ngIf="!note.completed && notesQuery!=='Completed'" mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
+          <mat-list-option *ngIf="!note.completed  && notesQuery!=='Completed'"  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
+             {{ note.title }}
+            <mat-divider></mat-divider>
+
+          </mat-list-option>
+        </div>
+      </mat-selection-list>
+
+
+      <mat-selection-list>
+        <div class="notesContainer" *ngFor="let note of items | async ">
+          <mat-icon *ngIf="note.completed  && notesQuery!=='Incomplete' " mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
+          <mat-list-option *ngIf="note.completed  && notesQuery!=='Incomplete' "  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
+            {{ note.title }}
+            <mat-divider></mat-divider>
+          </mat-list-option>
+
+        </div>
+      </mat-selection-list>
+
+    </mat-card-content>
+    <mat-card-footer *ngIf="remaingingTodos">
+      Tasks Remaining: {{  remaingingTodos.length }}
+    </mat-card-footer>
+
+  </mat-card>
+  <br/>
+  <mat-chip-list>
+    <mat-chip value="all" (click)="notesQuery='all'" [selected]="notesQuery==='all'">All</mat-chip>
+    <mat-chip value="comp" (click)="notesQuery='Completed'" [selected]="notesQuery==='Completed'">Completed</mat-chip>
+    <mat-chip value="ïncomp" (click)="notesQuery='Incomplete'" [selected]="notesQuery==='Incomplete'">Incomplete</mat-chip>
+  </mat-chip-list>
+</div>
+
+
+  <div class="listContainer" *ngIf="(items | async)?.length===0">
+     Nothing Pending   <i class="fa fa-smile-o fa-2x"></i>
+  </div>
+

@@ -1,5 +1,5 @@
-<section  *ngIf="authService.user$ | async  as user; else notLoggedIn">
-  <span> {{ user.displayName }} </span>
+<section  *ngIf="authService.user; else notLoggedIn">
+  <span class="username"> {{ authService.user.displayName }} </span>
   <button  mat-mini-fab class="mat-elevation-z24" (click)="signOut()">
     <mat-icon>power_settings_new</mat-icon>
   </button>
@@ -8,7 +8,7 @@
 
 
 <ng-template #notLoggedIn>
-  <span (click)="showLoginOptions=!showLoginOptions" style="margin-right:.5em;color:white;font-size: 16px; cursor: pointer; font-weight:500;font-family: 'Roboto', sans-serif">Login</span>
+  <span (click)="showLoginOptions=!showLoginOptions" [class.fr]="!showLoginOptions" class="login">Login</span>
   <button  [@visibilityAnimation]="showLoginOptions" mat-mini-fab (click)="githubLogin()" *ngIf="!user" matTooltip="Login with github">
     <i class="fa fa-github fa-2x"></i>
   </button>

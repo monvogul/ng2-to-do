@@ -1,0 +1,44 @@
+.listContainer{
+  margin:0 auto;
+  max-width:50%;
+}
+
+.noteContainer{
+  margin:0 auto;
+  max-width:50%;
+  padding:1em;
+}
+.noteContainer .mat-form-field{
+  width: 70% ;
+}
+.mat-list-option {
+  height: auto !important;
+  padding: 10px !important;
+
+}
+mat-card-footer{
+  font-size: 90%;
+  color: silver;
+  padding-left:10px;
+  padding-bottom:10px;
+}
+
+.delNote {
+  float:right;
+  margin-right:.1em;
+  margin-top:.25em;
+  visibility:  hidden;
+  transition: all .2s ease-out;
+
+}
+
+div.notesContainer:hover .delNote{
+  visibility: visible;
+  cursor: pointer;
+  color: #3b3b3b;
+
+}
+.completed {
+  text-decoration-line: line-through;
+  color:silver;
+}

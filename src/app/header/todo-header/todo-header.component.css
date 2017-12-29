@@ -1,34 +1,7 @@
-mat-toolbar-row>span{
+mat-toolbar>span{
   letter-spacing: 2px;
+  font-size: 28px;
 }
-.search-container {
-  margin-left: 1em;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 4px;
-  margin-left: 2em;
-  max-width: 720px;
-  position: relative;
-}
-
-.search-box {
-  border: none;
-  font: normal 16px Roboto, sans-serif;
-  height: 46px;
-  outline: none;
-  padding: 11px 16px 11px 16px;
-  width: 100%;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.search-icon{
-  vertical-align: middle;
-  color: rgba(0, 0, 0, 0.5);
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
 .fill-remaining-space{
   flex: 1 1 auto;
 

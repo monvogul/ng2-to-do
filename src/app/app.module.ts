@@ -12,6 +12,10 @@ import {AuthComponent} from './auth/auth.component';
 import {AuthService} from './auth/auth.service';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
+import {AuthGuard} from "./auth/auth.guard";
+import {routes, AppRoutingModule} from "./app-routing.module";
+import {NotesListComponent} from "./notes-list/notes-list.component";
+import {HomeComponent} from "./home/home.component";
 
 
 export const firebaseConfig = {
@@ -25,8 +29,10 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     AuthComponent,
-    TodoHeaderComponent
+    TodoHeaderComponent,
+    NotesListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,10 +42,12 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     FormsModule,
     MaterialComponentModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
 
   ],
-  providers: [NotesService, AuthService],
+  providers: [NotesService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

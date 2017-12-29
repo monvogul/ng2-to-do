@@ -2,18 +2,22 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from "angularfire2/database";
 import * as firebase from "firebase";
 import {queryDef} from "@angular/core/src/view";
-
+import {AuthService} from "../auth/auth.service";
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map' ;
+import {AngularFireObject} from "angularfire2/database/interfaces";
 
 @Injectable()
 export class NotesService {
 
-  noteRef =  '/users/mansib/notes' ;
   itemsRef: AngularFireList<any>;
 
-  constructor(private db: AngularFireDatabase ) {
-    this.itemsRef = this.db.list(this.noteRef, ref => {
-      return ref.orderByChild("order");
-    }) ;
+  constructor(private db: AngularFireDatabase, private authServ: AuthService) {
+    let userId = authServ.currentUserId;
+    console.log("userId " , userId);
+    this.itemsRef = this.db.list('/users/'+ userId +'/notes', ref => {
+            return ref.orderByChild("order");
+      }) ;
   }
 
   getAllNotes() {
