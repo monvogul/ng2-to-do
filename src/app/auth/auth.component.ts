@@ -7,7 +7,7 @@ import {
   transition, group, query, stagger, keyframes, animateChild
 } from '@angular/animations';
 import {AuthService} from './auth.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -27,14 +27,14 @@ export class AuthComponent  {
 
   showLoginOptions = false;
 
- constructor(private authService: AuthService, private  router: Router) { }
+ constructor(public authService: AuthService, private  router: Router) { }
 
   githubLogin()  {
    this.authService.loginWithGitHub().then(() => {
      this.router.navigate(['/notes']);
    }).catch(error => {
      alert(error);
-   })
+   });
 
   }
 
@@ -43,11 +43,11 @@ export class AuthComponent  {
       this.router.navigate(['/notes']);
     }).catch(error => {
       alert(error);
-    })
+    });
 
   }
 
-  signOut(){
+  signOut() {
     this.authService.logOut().then(() => {
       this.router.navigate(['/']);
     })

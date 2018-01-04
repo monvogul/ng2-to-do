@@ -1,8 +1,19 @@
-mat-toolbar>span{
+mat-toolbar span a{
   letter-spacing: 2px;
   font-size: 28px;
+  margin-right: 3em;
+  text-decoration: none;
+  color: white;
 }
 .fill-remaining-space{
   flex: 1 1 auto;
 
+}
+
+a.mat-button{
+ font-size: 20px !important;
+ padding-left: .5em;
+}
+.active{
+  text-decoration: underline;
 }

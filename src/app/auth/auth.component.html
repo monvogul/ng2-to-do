@@ -6,7 +6,6 @@
 </section>
 
 
-
 <ng-template #notLoggedIn>
   <span (click)="showLoginOptions=!showLoginOptions" [class.fr]="!showLoginOptions" class="login">Login</span>
   <button  [@visibilityAnimation]="showLoginOptions" mat-mini-fab (click)="githubLogin()" *ngIf="!user" matTooltip="Login with github">

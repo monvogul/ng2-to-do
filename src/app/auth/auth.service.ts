@@ -3,12 +3,12 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
 
-  user:any
+  user: any;
   constructor(public afAuth: AngularFireAuth) {
       this.afAuth.authState.subscribe((user) => {
       this.user = user ;
@@ -26,12 +26,12 @@ export class AuthService {
   }
 
   loginWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider()
+    const provider = new firebase.auth.GoogleAuthProvider();
     return this.socialSignIn(provider);
   }
 
   loginWithGitHub() {
-    const provider = new firebase.auth.GithubAuthProvider()
+    const provider = new firebase.auth.GithubAuthProvider();
     return this.socialSignIn(provider);
   }
 
@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   private socialSignIn(provider) {
-    return this.afAuth.auth.signInWithPopup(provider)
+    return this.afAuth.auth.signInWithPopup(provider);
   }
 
 }

@@ -14,13 +14,20 @@
 .mat-list-option {
   height: auto !important;
   padding: 10px !important;
+}
 
+mat-card{
+ padding:0;
+ padding-right: 20px;
+ margin-bottom: 20px;
 }
 mat-card-footer{
   font-size: 90%;
-  color: silver;
-  padding-left:10px;
-  padding-bottom:10px;
+  color: darkgrey;
+  padding-left: 34px;
+  padding-right: 24px;
+  padding-bottom: 10px;
+
 }
 
 .delNote {
@@ -41,4 +48,14 @@ div.notesContainer:hover .delNote{
 .completed {
   text-decoration-line: line-through;
   color:silver;
+}
+
+.all-done{
+  font-size: 22px;
+  padding:30px;
+  padding-right: 10px;
+
+}
+.listContainer mat-icon{
+  font-size: 30px;
 }
