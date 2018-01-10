@@ -1,0 +1,70 @@
+.libContainer{
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 24px;
+}
+
+.libCard{
+  height: 194px;
+  width: 300px;
+  transition: .2s all ;
+}
+
+.libCard:hover{
+ transform: scale(1.1);
+ box-shadow:  0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12)
+}
+
+.mat-card-title{
+  font-weight: bold;
+  font-size: larger;
+  margin: 5px;
+}
+
+.mat-card-content{
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+}
+
+.lib-img{
+  background-size: cover;
+
+}
+.mat-card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.card-footer {
+  bottom: 0;
+  border-top: .5px solid #dbdbdb;
+  box-sizing: border-box;
+  line-height: 50px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  color: #6e6e6e;
+  font-size: 16px;
+  padding: 0 16px;
+   transition: .2s background-color;
+}
+.card-footer a{
+  color: #696969;
+}
+
+.card-footer:hover a{
+  color: white;
+  font-weight: bold;
+}
+.card-footer:hover{
+  line-height: 32px;
+  padding: 8px 16px;
+  background-color:#ffd740;
+
+
+}

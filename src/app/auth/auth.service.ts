@@ -4,23 +4,22 @@ import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class AuthService {
 
-  user: any;
+  user: any  = {};
   constructor(public afAuth: AngularFireAuth) {
       this.afAuth.authState.subscribe((user) => {
       this.user = user ;
     });
   }
 
-  // Returns true if user is logged in
   get authenticated(): boolean {
-    return this.afAuth.authState !== null;
+    return this.user !== null;
   }
 
-  // Returns current user UID
   get currentUserId(): string {
     return this.authenticated ? this.user.uid : '';
   }

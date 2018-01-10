@@ -1,3 +1,38 @@
-<p>
-  home works!
-</p>
+<section style="margin:2em;">
+  <h1 class="mat-display-1">What is this?</h1>
+  <h2 class="mat-h2">
+    This is a small Todo app to show how to use
+    <a href="https://angular.io/">Angular</a> +
+    <a href="https://firebase.google.com/">Firebase</a> +
+    <a href="https://www.google.com/design/spec/material-design/introduction.html">
+      Google Material Design</a> together.
+  </h2>
+  <h2 class="mat-h2">
+    This demo application contains following features:
+    <ul>
+      <li>Social media login (Google and GitHub)</li>
+      <li>Personal 'Todo' item list (after login) </li>
+    </ul>
+  </h2>
+
+
+  <h2 class="mat-h2">The following libraries have been used for this App:</h2>
+ <div class="libContainer" *ngFor="let lib of usedLibs">
+  <mat-card class="libCard" mat-elevation-z12>
+      <mat-card-header>
+          <div mat-card-avatar class="lib-img" [style.backgroundImage]="'url(' + lib.thumb +')'">
+
+        </div>
+          <mat-card-title>{{lib.lib}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        {{lib.desc}}
+      </mat-card-content>
+      <div class="card-footer">
+          <a [href]="lib.url" target="_blank">{{lib.url}}</a>
+      </div>
+
+  </mat-card>
+
+</div>
+</section>

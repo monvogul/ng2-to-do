@@ -8,31 +8,30 @@
 </div>
 
 
-<div  class="listContainer" [@listAnimation]="items | async" >
+<div  class="listContainer" [@listAnimation]="(items | async)?.length>0 ? 'load' : 'noLoad' " >
     <mat-card>
     <mat-card-content *ngIf="(items | async)?.length>0">
       <mat-selection-list>
         <div class="notesContainer" *ngFor="let note of items | async">
           <mat-icon  *ngIf="!note.completed && notesQuery!=='Completed'" mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
-          <mat-list-option  [@slideIn]="items" *ngIf="!note.completed  && notesQuery!=='Completed'"  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
+          <mat-list-option   *ngIf="!note.completed  && notesQuery!=='Completed'"  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
              {{ note.title }}
           </mat-list-option>
         </div>
       </mat-selection-list>
 
-      <mat-divider></mat-divider>
 
       <mat-selection-list>
         <div class="notesContainer" *ngFor="let note of items | async ">
           <mat-icon *ngIf="note.completed  && notesQuery!=='Incomplete' " mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
-          <mat-list-option [@slideIn]="items" *ngIf="note.completed  && notesQuery!=='Incomplete' "  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
+          <mat-list-option  *ngIf="note.completed  && notesQuery!=='Incomplete' "  checkboxPosition="before" [selected]="note.completed" (click)="toggleCompleted(note)" [class.completed]="note.completed" >
             {{ note.title }}
           </mat-list-option>
         </div>
       </mat-selection-list>
     </mat-card-content>
-    <mat-card-footer  *ngIf="(items | async)?.length!==0">
-     <span  *ngIf="remaingingTodos">Tasks Remaining: {{  remaingingTodos.length }} </span>
+    <mat-card-footer *ngIf="(items | async)?.length>0">
+     <span>Tasks Remaining: {{(incompleteTasks | async)?.length}}  </span>
       <span style="margin-right:1em; float:right">Last Edited: {{lastEdited | async | date : 'short' }}</span>
     </mat-card-footer>
   </mat-card>
@@ -42,6 +41,7 @@
     <mat-chip value="comp" (click)="notesQuery='Completed'" [selected]="notesQuery==='Completed'">Completed</mat-chip>
     <mat-chip value="ïncomp" (click)="notesQuery='Incomplete'" [selected]="notesQuery==='Incomplete'">Incomplete</mat-chip>
   </mat-chip-list>
+
 </div>
 
 
@@ -49,4 +49,6 @@
    <span class="all-done">No Pending Tasks</span>
    <mat-icon>sentiment_very_satisfied</mat-icon>
   </div>
+
+
 

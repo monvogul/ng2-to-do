@@ -17,3 +17,20 @@ a.mat-button{
 .active{
   text-decoration: underline;
 }
+.disabled{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.disabled:hover::after{
+  content: 'Login to see your notes';
+  position:absolute;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.8) ;
+  top: 5px;
+  left:120px;
+  font-size: 80%;
+  color: #6d6d6d;
+  z-index: 999;
+
+}
