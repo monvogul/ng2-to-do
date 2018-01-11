@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
 }
-
+/*
 .loading {
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -23,12 +23,7 @@ body {
 app-root:empty + .loading {
   opacity: 1;
   z-index: 100;
-}
-
-app-root:empty + .loading h1 {
   text-align: center;
-  transform: translate(0, -50%);
-  position: absolute;
-  top: 50%;
-  width: 100%;
+
 }
+ */

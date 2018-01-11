@@ -10,10 +10,34 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body class="mat-app-background">
-<app-root></app-root>
-<div class="loading">
- <h1>Loading...
-  </h1>
- </div>
+<app-root>
+<style>
+.container{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  margin: 0 auto;
+}
+.loader {
+  border: 15px dotted blue;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); border: 15px dotted greenyellow;}
+  50% { transform: rotate(180deg); border: 15px dotted salmon; }
+  100% { transform: rotate(360deg); border:15px dotted yellow; }
+}
+</style>
+  <div class="container">
+   <div class="loader"> </div>
+</div>
+</app-root>
+
 </body>
 </html>
