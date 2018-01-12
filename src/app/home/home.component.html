@@ -15,24 +15,22 @@
     </ul>
   </h2>
 
-
   <h2 class="mat-h2">The following libraries have been used for this App:</h2>
- <div class="libContainer" *ngFor="let lib of usedLibs">
-  <mat-card class="libCard" mat-elevation-z12>
+  <div class="libContainer" *ngFor="let lib of usedLibs">
+    <mat-card class="libCard" mat-elevation-z12  @slideIn>
       <mat-card-header>
-          <div mat-card-avatar class="lib-img" [style.backgroundImage]="'url(' + lib.thumb +')'">
-
+        <div mat-card-avatar class="lib-img" [style.backgroundImage]="'url(' + lib.thumb +')'">
         </div>
-          <mat-card-title>{{lib.lib}}</mat-card-title>
+        <mat-card-title>{{lib.lib}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         {{lib.desc}}
       </mat-card-content>
       <div class="card-footer">
-          <a [href]="lib.url" target="_blank">{{lib.url}}</a>
+        <a [href]="lib.url" target="_blank">{{lib.url}}</a>
       </div>
 
-  </mat-card>
+    </mat-card>
 
-</div>
+  </div>
 </section>

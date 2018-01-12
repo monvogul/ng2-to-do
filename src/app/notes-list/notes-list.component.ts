@@ -4,13 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
 
 import { NotesService } from './notes.service';
-import { notesLoadAnimation } from './notes-list-animation';
+import { notesLoadAnimation } from '../app-animations' ;
 
 @Component({
   selector: 'app-notes-list',
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.css'],
-  animations: [ notesLoadAnimation ]
+  animations: [ notesLoadAnimation]
 })
 
 export class NotesListComponent implements OnInit {

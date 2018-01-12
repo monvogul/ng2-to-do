@@ -8,9 +8,9 @@
 </div>
 
 
-<div  class="listContainer" [@listAnimation]="(items | async)?.length>0 ? 'load' : 'noLoad' " >
+<div  *ngIf="(items | async)?.length>0" class="listContainer" [@listAnimation]="(items | async)?.length>0 ? 'load' : 'noLoad' " >
     <mat-card>
-    <mat-card-content *ngIf="(items | async)?.length>0">
+    <mat-card-content>
       <mat-selection-list>
         <div class="notesContainer" *ngFor="let note of items | async">
           <mat-icon  *ngIf="!note.completed && notesQuery!=='Completed'" mat-list-icon class="delNote" (click)="deleteNote(note)">cancel</mat-icon>
@@ -19,7 +19,6 @@
           </mat-list-option>
         </div>
       </mat-selection-list>
-
 
       <mat-selection-list>
         <div class="notesContainer" *ngFor="let note of items | async ">
