@@ -5,7 +5,7 @@
  <a mat-button routerLink="home" routerLinkActive="active">
       Home
   </a>
-  <a mat-button routerLink="notes"  [class.disabled]="!auth.currentUserId"  routerLinkActive="active">
+  <a mat-button routerLink="notes"  [class.disabled]="!authService.user"  routerLinkActive="active">
     My Tasks
   </a>
   <span class="fill-remaining-space"></span>

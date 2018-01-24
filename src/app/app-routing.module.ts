@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
-import {NotesListComponent} from "./notes-list/notes-list.component";
-import {AuthGuard} from "./auth/auth.guard";
-import {AppComponent} from "./app.component";
-import {HomeComponent} from "./home/home.component";
+import { RouterModule, Routes } from '@angular/router';
+
+import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
+import { NotesListComponent } from './notes-list/notes-list.component';
 
 
  export const routes: Routes = [

@@ -1,13 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition, group, query, stagger, keyframes, animateChild
-} from '@angular/animations';
-import {AuthService} from './auth.service';
-import {Router} from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from './auth.service';
 
 
 @Component({
@@ -25,7 +20,7 @@ import {Router} from '@angular/router';
 })
 export class AuthComponent  {
 
-  showLoginOptions = false;
+ showLoginOptions = false;
 
  constructor(public authService: AuthService, private  router: Router) { }
 

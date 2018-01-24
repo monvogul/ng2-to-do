@@ -1,5 +1,6 @@
-import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-todo-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoHeaderComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

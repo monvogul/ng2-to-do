@@ -1,21 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { MaterialComponentModule } from './material-component.module';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TodoHeaderComponent} from './header/todo-header/todo-header.component';
-import {NotesService} from './notes-list/notes.service';
-import {FormsModule} from '@angular/forms';
-import {AuthComponent} from './auth/auth.component';
-import {AuthService} from './auth/auth.service';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import {RouterModule} from '@angular/router';
-import {AuthGuard} from "./auth/auth.guard";
-import {routes, AppRoutingModule} from "./app-routing.module";
-import {NotesListComponent} from "./notes-list/notes-list.component";
-import {HomeComponent} from "./home/home.component";
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
+import { TodoHeaderComponent } from './header/todo-header.component';
+import { HomeComponent } from './home/home.component';
+import { MaterialComponentModule } from './material-component.module';
+import { NotesListComponent } from './notes-list/notes-list.component';
+import { NotesService } from './notes-list/notes.service';
 
 
 export const firebaseConfig = {

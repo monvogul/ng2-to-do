@@ -23,6 +23,9 @@ export class AuthService {
   get currentUserId(): string {
     return this.authenticated ? this.user.uid : '';
   }
+  get currentUserName(): string {
+    return this.authenticated ? this.user.displayName : '';
+  }
 
   loginWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();

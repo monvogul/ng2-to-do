@@ -1,5 +1,5 @@
 <section  *ngIf="authService.user; else notLoggedIn">
-  <span class="username"> {{ authService.user.displayName }} </span>
+  <span class="username"> {{ authService.currentUserName }} </span>
   <button  mat-mini-fab class="mat-elevation-z24" (click)="signOut()">
     <mat-icon>power_settings_new</mat-icon>
   </button>
