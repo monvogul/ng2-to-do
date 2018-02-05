@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
+
+import { Injectable, OnDestroy } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/take';
-
 @Injectable()
-export class AuthService {
-
+export class AuthService implements OnDestroy {
   user: any  = {};
+  subscription;
+
   constructor(public afAuth: AngularFireAuth) {
-      this.afAuth.authState.subscribe((user) => {
+     this.subscription =  this.afAuth.authState.subscribe((user) => {
       this.user = user ;
     });
   }
@@ -43,6 +43,10 @@ export class AuthService {
 
   private socialSignIn(provider) {
     return this.afAuth.auth.signInWithPopup(provider);
+  }
+
+  ngOnDestroy() {
+   this.subscription.unsubscribe();
   }
 
 }

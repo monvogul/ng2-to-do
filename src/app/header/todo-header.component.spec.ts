@@ -34,8 +34,8 @@ describe('TodoHeaderComponent', () => {
       imports: [ MaterialComponentModule, BrowserAnimationsModule ],
       declarations: [ TodoHeaderComponent, AuthComponent ],
       providers: [
-        {provide: AuthService, useClass: AuthServiceStub },
-         {provide: Router, useClass: RouterStub }
+        { provide: AuthService, useClass: AuthServiceStub },
+        { provide: Router, useClass: RouterStub }
         ]
     })
     .compileComponents();

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
 
+import { notesLoadAnimation } from '../app-animations';
 import { NotesService } from './notes.service';
-import { notesLoadAnimation } from '../app-animations' ;
 
 @Component({
   selector: 'app-notes-list',
@@ -15,15 +13,12 @@ import { notesLoadAnimation } from '../app-animations' ;
 
 export class NotesListComponent implements OnInit {
   items: Observable<any[]>;
-  newNote: string;
+  newNote = '';
   notesQuery = 'all';
   lastEdited: Observable<{}>;
   incompleteTasks;
 
-  constructor(
-    private db: AngularFireDatabase,
-    private noteService: NotesService
-  ) {}
+  constructor( private noteService: NotesService) {}
 
   ngOnInit() {
     this.items = this.noteService.getAllNotes();

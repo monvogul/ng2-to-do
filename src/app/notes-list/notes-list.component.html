@@ -31,14 +31,14 @@
     </mat-card-content>
     <mat-card-footer *ngIf="(items | async)?.length>0">
      <span>Tasks Remaining: {{(incompleteTasks | async)?.length}}  </span>
-      <span style="margin-right:1em; float:right">Last Edited: {{lastEdited | async | date : 'short' }}</span>
+      <span class="lstEdited">Last Edited: {{lastEdited | async | date : 'short' }}</span>
     </mat-card-footer>
   </mat-card>
   <br/>
   <mat-chip-list *ngIf="(items | async)?.length>0">
     <mat-chip value="all" (click)="notesQuery='all'" [selected]="notesQuery==='all'">All</mat-chip>
     <mat-chip value="comp" (click)="notesQuery='Completed'" [selected]="notesQuery==='Completed'">Completed</mat-chip>
-    <mat-chip value="ïncomp" (click)="notesQuery='Incomplete'" [selected]="notesQuery==='Incomplete'">Incomplete</mat-chip>
+    <mat-chip value="incomp" (click)="notesQuery='Incomplete'" [selected]="notesQuery==='Incomplete'">Incomplete</mat-chip>
   </mat-chip-list>
 
 </div>

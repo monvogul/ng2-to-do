@@ -45,7 +45,7 @@ export const firebaseConfig = {
     MaterialComponentModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(  [{path: 'home', component: HomeComponent}])
 
   ],
   providers: [NotesService, AuthService, AuthGuard],

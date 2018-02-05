@@ -39,7 +39,7 @@ export class NotesService {
   }
 
   getLastEdited() {
-    return this.db.object('/users/' + this.userId + "/lastEdited/").valueChanges();
+    return this.db.object('/users/' + this.userId + '/lastEdited/').valueChanges();
   }
 
   private updateLastEdited() {

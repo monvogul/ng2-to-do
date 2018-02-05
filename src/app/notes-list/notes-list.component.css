@@ -30,6 +30,11 @@ mat-card-footer{
 
 }
 
+span.lstEdited{
+  margin-right:1em;
+  float:right
+}
+
 .delNote {
   float:right;
   margin-right:.1em;
