@@ -26,7 +26,7 @@ export const firebaseConfig = {
   projectId: 'ng-to-do-afb25',
   storageBucket: '',
   messagingSenderId: '367214937827'
-}
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,7 @@ export const firebaseConfig = {
     MaterialComponentModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    RouterModule.forRoot(  [{path: 'home', component: HomeComponent}])
+    RouterModule.forRoot(routes)
 
   ],
   providers: [NotesService, AuthService, AuthGuard],
