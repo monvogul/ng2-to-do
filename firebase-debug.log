@@ -1,0 +1,26 @@
+[debug] [2018-02-07T12:33:23.040Z] ----------------------------------------------------------------------
+[debug] [2018-02-07T12:33:23.044Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\torea\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-02-07T12:33:23.044Z] CLI Version:   3.17.4
+[debug] [2018-02-07T12:33:23.044Z] Platform:      win32
+[debug] [2018-02-07T12:33:23.044Z] Node Version:  v8.9.4
+[debug] [2018-02-07T12:33:23.045Z] Time:          Wed Feb 07 2018 23:33:23 GMT+1100 (AUS Eastern Summer Time)
+[debug] [2018-02-07T12:33:23.045Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-07T12:33:23.109Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-07T12:33:23.111Z] > authorizing via signed-in user
+[debug] [2018-02-07T12:33:23.116Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-07T12:33:23.117Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/7m1Y8hXAcicGmHE9qa9-j8INqWjeVn94cHcm0Ta4Eqt8t7-0Sc3o41l5LfuNWEJZ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Feb 07 2018 23:33:23 GMT+1100 (AUS Eastern Summer Time)
+[debug] [2018-02-07T12:33:23.720Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-07T12:33:23.786Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ng-to-do-afb25  
+  
+ Wed Feb 07 2018 23:33:23 GMT+1100 (AUS Eastern Summer Time)
+[debug] [2018-02-07T12:33:25.376Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-07T12:33:25.378Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ng-to-do-afb25/tokens  
+  
+ Wed Feb 07 2018 23:33:25 GMT+1100 (AUS Eastern Summer Time)
