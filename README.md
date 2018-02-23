@@ -1,27 +1,26 @@
-# TodoApp
+# Angular/Firebase/Material - Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+## Table of Contents
+ * [What is this](#what-is-this)
+ * [Demo](#demo)
+ * [Tests](#tests)
+   * [Unit tests](#unit-tests)
+   
 
-## Development server
+## What is this
+Just a small demo to show how to use [Angular2](https://angular.io/) + [Firebase](https://firebase.google.com/) + 
+[Google Material Design](https://www.google.com/design/spec/material-design/introduction.html) together. Currently
+this demo application contains following features:
+ * Social media login (Google and GitHub)
+ * Personal 'Todo' item list
+ 
+## Demo
+Demo of this application can be found from [https://ng-to-do-afb25.firebaseapp.com/](https://ng-to-do-afb25.firebaseapp.com/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Tests
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Unit tests
+To run tests run:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ ng test
